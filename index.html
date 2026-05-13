@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>What's Flunch</title>
+    <style>
+        body {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            background: rgb(4, 3, 20);
+            color: #eef1ffc7;
+            display: grid;
+            place-items: center;
+            height: 100vh;
+        }
+        .card {
+            background: rgb(10, 5, 51);
+            padding: 35px;
+            border-radius: 10px;
+            text-align: center;
+            border: 1px solid rgb(30, 22, 92);
+            box-shadow: 0 8px 28px rgba(0,0,0,0.35);
+        }
+        h1 {
+            margin-bottom: 12px;
+        }
+        h2 {
+            color: #fff;
+            font-weight: 600px;
+            font-size: 40px;
+        }
+        #genBtn {
+            background: #eef1ffc7;
+            padding: 10px;
+            border-radius: 10px;
+            border: none;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h1>Whats Flunch</h1>
+        <h2 id="result"></h2>
+        <button id="genBtn">Decide already jeez</button>
+    </div>
+
+    <script>
+        const genBtn = document.getElementById("genBtn");
+        const result = document.getElementById("result");
+        const places = [
+            "Bojangles",
+            "Chili's",
+            "Carver's",
+            "High Five",
+            "Zaxby's",
+            "Jersey Mike's",
+            "Arby's",
+            "Smithfields",
+            "Bdubs",
+            "Mexican",
+            "Apex Diner",
+            "IHOP",
+            "Mcalisters",
+            "Freddie's",
+        ]
+        genBtn.addEventListener('click', () => {
+            const selection = places[Math.floor(Math.random() * places.length)];
+            result.innerHTML = `${selection}`;
+            genBtn.innerHTML = "Nah";
+        })
+    </script>
+</body>
+</html>
